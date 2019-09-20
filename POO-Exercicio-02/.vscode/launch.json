@@ -1,0 +1,16 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Avaliacao",
+            "request": "launch",
+            "mainClass": "Avaliacao"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - problemas",
+            "request": "launch",
+            "mainClass": "problemas"
+        }
+    ]
+}
