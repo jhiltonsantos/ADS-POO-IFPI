@@ -1,0 +1,53 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaEquipamento",
+            "request": "launch",
+            "mainClass": "questao14.testaEquipamento",
+            "projectName": "Ex02"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaNumberUtils",
+            "request": "launch",
+            "mainClass": "questao13.testaNumberUtils",
+            "projectName": "Ex02"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaDesconto",
+            "request": "launch",
+            "mainClass": "questao12.testaDesconto",
+            "projectName": "Ex02"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaDecimalNumber",
+            "request": "launch",
+            "mainClass": "questao11.testaDecimalNumber",
+            "projectName": "Ex02"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaSoma",
+            "request": "launch",
+            "mainClass": "questao10.testaSoma",
+            "projectName": "Ex02"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaSaudacao",
+            "request": "launch",
+            "mainClass": "questao07.testaSaudacao",
+            "projectName": "Ex02"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - questao06",
+            "request": "launch",
+            "mainClass": "questao06.questao06",
+            "projectName": "Ex02"
+        }
+    ]
+}
