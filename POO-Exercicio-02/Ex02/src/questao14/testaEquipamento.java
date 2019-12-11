@@ -1,6 +1,5 @@
 package questao14;
 
-import java.security.Principal;
 
 /**
  * testaEquipamento

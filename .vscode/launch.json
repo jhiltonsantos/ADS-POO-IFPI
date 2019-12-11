@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Programa",
+            "request": "launch",
+            "mainClass": "Programa"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - testaEquipamento",
+            "request": "launch",
+            "mainClass": "questao14.testaEquipamento",
+            "projectName": "Ex02"
+        }
+    ]
+}
