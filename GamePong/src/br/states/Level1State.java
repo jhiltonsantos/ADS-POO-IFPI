@@ -4,23 +4,38 @@ import br.Game;
 import br.input.KeyManager;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Level1State implements State {
 
-    private int wObject = 10, hObject = 10;
+    private int wObject = 30, hObject = 30;
     //Bola
     private Rectangle ball = new Rectangle(Game.WIDTH/2 - 5,
             Game.HEIGHT/2 - 5,
             wObject, hObject);
     //Jogadores
-    private Rectangle p1 = new Rectangle(0, 0, 10,50);
-    private Rectangle p2 = new Rectangle(Game.WIDTH -10, 0, 10,50);
+    private Rectangle p1 = new Rectangle(0, 0, 10,110);
+    private Rectangle p2 = new Rectangle(Game.WIDTH -10, 0, 10,110);
 
-    private int x = 0, y = 0, movex = 1, movey = 1;
+    private int movex = 1, movey = 1;
+    private int scoreP1 = 0;
+    private int scoreP2 = 0;
+
 
 
     @Override
     public void init() {
+        start();
+    }
+
+    public void start () {
+        ball.x = Game.WIDTH/2 - 5;
+        ball.y = Game.WIDTH/2 - 5;
+
+        Random r = new Random();
+        //Operador Ternario
+        movex = (r.nextInt(2) == 0) ? 2 : -2;
+        movey = (r.nextInt(2) == 0) ? 2 : -2;
 
     }
 
@@ -65,19 +80,23 @@ public class Level1State implements State {
 
     private void limitsBall() {
         if (ball.x+wObject > Game.WIDTH) {
-            movex = -1;
+            scoreP1++;
+            start();
         }
-
         if (ball.y+hObject > Game.HEIGHT) {
-            movey = -1;
+            movey = -2;
         }
 
         if (ball.x < 0) {
-            movex = 1;
+            scoreP2++;
+            start();
+        }
+        if (ball.y < 0) {
+            movey = 2;
         }
 
-        if (ball.y < 0) {
-            movey = 1;
+        if (p1.intersects(ball) || p2.intersects(ball)) {
+            movex *= -1;
         }
     }
 
@@ -86,10 +105,25 @@ public class Level1State implements State {
         g.setColor(Color.BLACK);
         g.fillRect(0,0,Game.WIDTH, Game.HEIGHT);
 
-        g.setColor(Color.WHITE);
+        Font fonte = new Font ("Dialog", Font.BOLD, 24);
+        g.setFont(fonte);
+        g.setColor(Color.CYAN);
+        g.drawString("Player 1: " + scoreP1,
+                Game.WIDTH * 1/4 - g.getFontMetrics().stringWidth("Player 1: " + scoreP1)/2,
+                g.getFontMetrics(fonte).getHeight());
+        g.setColor(Color.ORANGE);
+        g.drawString("Player 2: " + scoreP2,
+                Game.WIDTH * 3/4 - g.getFontMetrics().stringWidth("Player 2: " + scoreP2)/2,
+                g.getFontMetrics(fonte).getHeight());
+
+
+
+        g.setColor(Color.RED);
         g.fillRect(ball.x, ball.y, ball.width, ball.height);
 
+        g.setColor(Color.CYAN);
         g.fillRect(p1.x, p1.y, p1.width, p1.height);
+        g.setColor(Color.ORANGE);
         g.fillRect(p2.x, p2.y, p2.width, p2.height);
 
 

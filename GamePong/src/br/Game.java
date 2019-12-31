@@ -14,7 +14,7 @@ public class Game implements Runnable{
     private Thread thread;
     private boolean running = false;
 
-    public static final int WIDTH = 400, HEIGHT = 300;
+    public static final int WIDTH = 1000, HEIGHT = 700;
 
     private StateManager sm;
     private KeyManager km;
@@ -31,7 +31,7 @@ public class Game implements Runnable{
     @Override
     public void run() {
         init ();
-        int FPS = 60;
+        int FPS = 90;
         double timePerTick = 1000000000 / FPS;
         double delta = 0;
         long now;
