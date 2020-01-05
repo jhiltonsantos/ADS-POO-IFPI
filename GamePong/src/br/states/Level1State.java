@@ -8,14 +8,14 @@ import java.util.Random;
 
 public class Level1State implements State {
 
-    private int wObject = 30, hObject = 30;
+    private int wObject = 50, hObject = 50;
     //Bola
     private Rectangle ball = new Rectangle(Game.WIDTH/2 - 5,
             Game.HEIGHT/2 - 5,
             wObject, hObject);
     //Jogadores
-    private Rectangle p1 = new Rectangle(0, 0, 10,110);
-    private Rectangle p2 = new Rectangle(Game.WIDTH -10, 0, 10,110);
+    private Rectangle p1 = new Rectangle(0, 0, 10,130);
+    private Rectangle p2 = new Rectangle(Game.WIDTH -10, 0, 10,130);
 
     private int movex = 1, movey = 1;
     private int scoreP1 = 0;
@@ -115,6 +115,9 @@ public class Level1State implements State {
         g.drawString("Player 2: " + scoreP2,
                 Game.WIDTH * 3/4 - g.getFontMetrics().stringWidth("Player 2: " + scoreP2)/2,
                 g.getFontMetrics(fonte).getHeight());
+
+        g.setColor(Color.RED);
+        g.fillRect(Game.WIDTH/2 - 3, 0, 6, Game.HEIGHT);
 
 
 

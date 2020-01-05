@@ -31,7 +31,7 @@ public class Game implements Runnable{
     @Override
     public void run() {
         init ();
-        int FPS = 90;
+        int FPS = 144;
         double timePerTick = 1000000000 / FPS;
         double delta = 0;
         long now;
