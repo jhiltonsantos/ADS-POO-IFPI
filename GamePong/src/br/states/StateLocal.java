@@ -6,7 +6,7 @@ import br.input.KeyManager;
 import java.awt.*;
 import java.util.Random;
 
-public class Level1State implements State {
+public class StateLocal implements State {
 
     private int wObject = 50, hObject = 50;
     //Bola

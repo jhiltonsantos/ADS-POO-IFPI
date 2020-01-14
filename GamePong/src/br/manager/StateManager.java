@@ -1,4 +1,8 @@
-package br.states;
+package br.manager;
+
+import br.states.MenuState;
+import br.states.State;
+import br.states.StateLocal;
 
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -6,13 +10,12 @@ import java.awt.event.KeyListener;
 
 public class StateManager implements KeyListener {
 
-    public static final int numberStates = 3;
+    public static final int numberStates = 2;
     public static State[] states = new State[numberStates];
     public static int currentState = 0;
 
-    public static final int FPS = 0;
-    public static final int MENU = 1;
-    public static final int LEVEL1 = 2;
+    public static final int MENU = 0;
+    public static final int LOCAL = 1;
 
     public static void setState(int state) {
         currentState = state;
@@ -24,9 +27,8 @@ public class StateManager implements KeyListener {
     }
 
     public StateManager() {
-        states[0] = new FPSState();
-        states[1] = new MenuState();
-        states[2] = new Level1State();
+        states[0] = new MenuState();
+        states[1] = new StateLocal();
     }
 
     public void update() {

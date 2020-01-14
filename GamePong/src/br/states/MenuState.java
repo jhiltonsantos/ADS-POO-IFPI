@@ -1,6 +1,7 @@
 package br.states;
 
 import br.Game;
+import br.manager.StateManager;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -105,7 +106,7 @@ public class MenuState implements State {
     private void select() {
         switch (choice) {
             case 0:
-                StateManager.setState(StateManager.LEVEL1);
+                StateManager.setState(StateManager.LOCAL);
                 break;
             case 1:
 

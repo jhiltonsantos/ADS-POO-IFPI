@@ -3,7 +3,7 @@ package br;
 import br.display.Display;
 
 import br.input.KeyManager;
-import br.states.StateManager;
+import br.manager.StateManager;
 
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
